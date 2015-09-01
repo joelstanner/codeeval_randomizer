@@ -27,7 +27,7 @@ with open('codeeval_open_challenges.html', 'r') as html_file:
 
         for script in scripts:
             temp_data = script.split(
-                'easy_challanges =')[1].split(';')[0].strip()
+                challenge + ' =')[1].split(';')[0].strip()
             to_extract[challenge] = ast.literal_eval(temp_data.strip())
 
 unsolved_easy = []
