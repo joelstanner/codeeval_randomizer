@@ -1,7 +1,16 @@
 """some code by user aperezalbela http://dpaste.com/0957WEF"""
 
 import ast
+import random
+from itertools import chain
+from sys import argv
 from lxml import html
+
+
+UNSOLVED_EASY = []
+UNSOLVED_MOD = []
+UNSOLVED_HARD = []
+UNSOLVED_ALL = []
 
 with open('codeeval_open_challenges.html', 'r') as html_file:
     html_text = html_file.read()
