@@ -30,16 +30,47 @@ with open('codeeval_open_challenges.html', 'r') as html_file:
                 challenge + ' =')[1].split(';')[0].strip()
             to_extract[challenge] = ast.literal_eval(temp_data.strip())
 
-unsolved_easy = []
-unsolved_mod = []
-unsolved_hard = []
-
 
 def solved_challenge(challenge_level, unsolved_list):
     for item in (challenge_level):
         if item[6] != 'Solved':
             unsolved_list.append(item)
 
+
+def randomize(random_lvl):
+    """Pick a random challenge from a list of challenges and return it.
+
+    args:
+        random_lvl: which level of difficulty the user wants to select from
+            1 - easy
+            2 - moderate
+            3 - hard
+            4 - any
+
+    returns:
+        a challenge
+    """
+    if random_lvl == '1':
+        return random.choice(UNSOLVED_EASY)
+    elif random_lvl == '2':
+        return random.choice(UNSOLVED_MOD)
+    elif random_lvl == '3':
+        return random.choice(UNSOLVED_HARD)
+    elif random_lvl == '4':
+        # make one giant list of everything
+        UNSOLVED_ALL.extend(UNSOLVED_EASY)
+        UNSOLVED_ALL.extend(UNSOLVED_MOD)
+        UNSOLVED_ALL.extend(UNSOLVED_HARD)
+
+        return random.choice(UNSOLVED_ALL)
+
+
+if __name__ == '__main__':
+    solved_challenge(to_extract['easy_challanges'], UNSOLVED_EASY)
+    solved_challenge(to_extract['moderate_challanges'], UNSOLVED_MOD)
+    solved_challenge(to_extract['hard_challanges'], UNSOLVED_HARD)
+
+    print(randomize(argv[1]))
 
 #print to_extract['easy_challanges']
 #print to_extract['moderate_challanges']
