@@ -21,6 +21,17 @@ with open('codeeval_open_challenges.html', 'r') as html_file:
                 'easy_challanges =')[1].split(';')[0].strip()
             to_extract[challenge] = ast.literal_eval(temp_data.strip())
 
+unsolved_easy = []
+unsolved_mod = []
+unsolved_hard = []
+
+
+def solved_challenge(challenge_level, unsolved_list):
+    for item in (challenge_level):
+        if item[6] != 'Solved':
+            unsolved_list.append(item)
+
+
 #print to_extract['easy_challanges']
 #print to_extract['moderate_challanges']
 #print to_extract['hard_challanges']
