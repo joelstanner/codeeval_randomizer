@@ -1,12 +1,7 @@
-"""some code by user aperezalbela"""
+"""some code by user aperezalbela http://dpaste.com/0957WEF"""
 
 import ast
 from lxml import html
-from requests import Session
-
-s = Session()
-
-# response = s.get("https://codeeval.com/open_challenges/", cookies={'sessionid':'PASTE_YOUR_SESSION_ID_HERE'})
 
 with open('codeeval_open_challenges.html', 'r') as html_file:
     html_text = html_file.read()
