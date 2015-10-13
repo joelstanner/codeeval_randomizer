@@ -16,7 +16,6 @@ from the "easy" category. The valid choices are as follows:
 
 import ast
 import random
-from itertools import chain
 from sys import argv
 from lxml import html
 
@@ -85,7 +84,3 @@ if __name__ == '__main__':
     solved_challenge(to_extract['hard_challanges'], UNSOLVED_HARD)
 
     print(randomize(argv[1]))
-
-#print to_extract['easy_challanges']
-#print to_extract['moderate_challanges']
-#print to_extract['hard_challanges']
