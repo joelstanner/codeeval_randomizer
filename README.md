@@ -5,9 +5,9 @@ a number corresponding to which level of eval you are looking to attempt. For
 example 'python random_challenge2.py 1'. This will return a random challenge
 from the "easy" category. The valid choices are as follows:
 
-1 - easy
-2 - moderate
-3 - hard
-4 - any
+* 1 - easy
+* 2 - moderate
+* 3 - hard
+* 4 - any
 
 This script will skip any challenges that you have already completed.
